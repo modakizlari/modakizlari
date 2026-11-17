@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moda Kızları</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #080408;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    transition: 0.4s;
+    padding: 25px 15px;
+}
+
+.container {
+    max-width: 430px;
+    margin: auto;
+}
+
+.logo {
+    width: 220px;
+    border-radius: 50%;
+    margin-top: 35px;
+    box-shadow: 0 0 30px #ff008c;
+}
+
+h1 {
+    color: #ff168f;
+    font-size: 35px;
+    text-shadow: 0 0 15px #ff168f;
+}
+
+p {
+    color: #ffc1df;
+    margin-bottom: 25px;
+}
+
+.social {
+    display: block;
+    padding: 17px;
+    margin: 16px 0;
+    border-radius: 15px;
+    background: #ff168f;
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff168f;
+    transition: 0.3s;
+}
+
+.social:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff168f;
+}
+
+.mode {
+    padding: 12px 22px;
+    border-radius: 25px;
+    border: 1px solid #ff168f;
+    background: transparent;
+    color: #ff70b8;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+footer {
+    color: #ff70b8;
+    margin-top: 30px;
+}
+
+body.light {
+    background: #fff0f7;
+    color: #70264b;
+}
+
+body.light p {
+    color: #a33c70;
+}
+
+body.light .mode {
+    color: #a32365;
+}
+/* Floating butterflies and stars */
+
+.decoration {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    user-select: none;
+}
+
+.butterfly {
+    font-size: 30px;
+    animation: fly 8s ease-in-out infinite;
+}
+
+.butterfly.one {
+    top: 20%;
+    left: 8%;
+}
+
+.butterfly.two {
+    top: 65%;
+    right: 8%;
+    animation-delay: 3s;
+}
+
+.star {
+    color: #ff69b4;
+    font-size: 22px;
+    text-shadow: 0 0 10px #ff168f,
+                 0 0 25px #ff168f;
+    animation: sparkle 2s infinite alternate;
+}
+
+.star.one {
+    top: 25%;
+    right: 12%;
+}
+
+.star.two {
+    top: 75%;
+    left: 15%;
+    animation-delay: 1s;
+}
+
+@keyframes fly {
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-35px) rotate(15deg);
+    }
+}
+
+@keyframes sparkle {
+    from {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="decoration butterfly one">🦋</div>
+<div class="decoration butterfly two">🦋</div>
+
+<div class="decoration star one">✦</div>
+<div class="decoration star two">✧</div>
+<div class="container">
+
+<button class="mode" onclick="changeMode()" id="mode">
+☀️ Gündüz Modu
+</button>
+
+<br>
+
+<img src="https://modakizlari.github.io/moda.kizlari/logo.png" class="logo" alt="Moda Kızları">
+
+<h1>Moda Kızları 🌸</h1>
+
+<p>
+Hoş Geldiniz ♡<br>
+Tüm sosyal medya hesaplarımız tek bir yerde!
+</p>
+
+<a class="social"
+href="https://www.instagram.com/moda.kizlarii?igsh=MTJ6MmM5dGN2dXFpdQ==&igsi=MTJ6MmM5dGN2dXFpdQ=="
+target="_blank">
+📸 Instagram
+</a>
+
+<a class="social"
+href="https://www.tiktok.com/@jamilharis590?_r=1&_t=ZS-99F4hDD0yPQ"
+target="_blank">
+🎵 TikTok
+</a>
+
+<a class="social"
+href="https://www.facebook.com/share/19Dc7buPUx/"
+target="_blank">
+💙 Facebook
+</a>
+
+<a class="social"
+href="https://chat.whatsapp.com/GEq3mdToJ7sJAe7IcSjKl5"
+target="_blank">
+💚 WhatsApp
+</a>
+
+<footer>
+Made with ♡ Moda Kızları
+</footer>
+
+</div>
+
+<script>
+function changeMode() {
+
+    document.body.classList.toggle("light");
+
+    let btn = document.getElementById("mode");
+
+    if (document.body.classList.contains("light")) {
+        btn.innerHTML = "🌙 Gece Modu";
+    } else {
+        btn.innerHTML = "☀️ Gündüz Modu";
+    }
+
+}
+</script>
+
+</body>
+</html>
